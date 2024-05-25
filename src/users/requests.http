@@ -33,3 +33,23 @@ content-type: application/json
   "password": "asdf1234",
   "extra": "extra"
 }
+
+### Get one user
+GET http://localhost:3000/auth/2
+
+### Get all user with email
+GET http://localhost:3000/auth?email=damar@damar.com
+
+### Delete one user
+DELETE http://localhost:3000/auth/3
+
+### Delete not found user
+DELETE http://localhost:3000/auth/123123123
+
+### Update a new user invalid extra body whitelist true
+PATCH http://localhost:3000/auth/2
+content-type: application/json
+
+{
+  "email": "damar_test@damar.com"
+}
