@@ -1,0 +1,35 @@
+### Create a new user valid
+POST http://localhost:3000/auth/signup
+content-type: application/json
+
+{
+  "email": "damar@damar.com",
+  "password": "asdf1234"
+}
+
+### Create a new user invalid
+POST http://localhost:3000/auth/signup
+content-type: application/json
+
+{
+  "email": "damar@damar",
+  "password": "asdf1234"
+}
+
+### Create a new user invalid
+POST http://localhost:3000/auth/signup
+content-type: application/json
+
+{
+  "email": "damar@damar.com"
+}
+
+### Create a new user invalid extra body whitelist true
+POST http://localhost:3000/auth/signup
+content-type: application/json
+
+{
+  "email": "damar@damar.com",
+  "password": "asdf1234",
+  "extra": "extra"
+}
