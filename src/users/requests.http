@@ -3,7 +3,7 @@ POST http://localhost:3000/auth/signup
 content-type: application/json
 
 {
-  "email": "damar@damar.com",
+  "email": "damar2@damar.com",
   "password": "asdf1234"
 }
 
@@ -33,3 +33,44 @@ content-type: application/json
   "password": "asdf1234",
   "extra": "extra"
 }
+
+### Get one user
+GET http://localhost:3000/auth/2
+
+### Get all user with email
+GET http://localhost:3000/auth?email=damar@damar.com
+
+### Delete one user
+DELETE http://localhost:3000/auth/3
+
+### Delete not found user
+DELETE http://localhost:3000/auth/123123123
+
+### Update a new user invalid extra body whitelist true
+PATCH http://localhost:3000/auth/2
+content-type: application/json
+
+{
+  "email": "damar_test@damar.com"
+}
+
+### signin a new user valid
+POST http://localhost:3000/auth/signin
+content-type: application/json
+
+{
+  "email": "damar2@damar.com",
+  "password": "asdf1234"
+}
+
+### Set a color
+GET http://localhost:3000/auth/colors/red
+
+### Get a color
+GET http://localhost:3000/auth/colors
+
+### Get a session
+GET http://localhost:3000/auth/whoami
+
+### POST signout a session
+POST http://localhost:3000/auth/signout
