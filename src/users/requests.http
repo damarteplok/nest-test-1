@@ -3,7 +3,7 @@ POST http://localhost:3000/auth/signup
 content-type: application/json
 
 {
-  "email": "damar2@damar.com",
+  "email": "damar@damar.com",
   "password": "asdf1234"
 }
 
@@ -53,24 +53,3 @@ content-type: application/json
 {
   "email": "damar_test@damar.com"
 }
-
-### signin a new user valid
-POST http://localhost:3000/auth/signin
-content-type: application/json
-
-{
-  "email": "damar2@damar.com",
-  "password": "asdf1234"
-}
-
-### Set a color
-GET http://localhost:3000/auth/colors/red
-
-### Get a color
-GET http://localhost:3000/auth/colors
-
-### Get a session
-GET http://localhost:3000/auth/whoami
-
-### POST signout a session
-POST http://localhost:3000/auth/signout
