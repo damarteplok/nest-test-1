@@ -1,55 +1,40 @@
-### Create a new user valid
+### Create a new user
 POST http://localhost:3000/auth/signup
 content-type: application/json
 
 {
-  "email": "damar@damar.com",
-  "password": "asdf1234"
+  "email": "test@test.com",
+  "password": "12345"
 }
 
-### Create a new user invalid
-POST http://localhost:3000/auth/signup
+### Sign in as an existing user
+POST http://localhost:3000/auth/signin
 content-type: application/json
 
 {
-  "email": "damar@damar",
-  "password": "asdf1234"
+  "email": "test@test.com",
+  "password": "12345"
 }
 
-### Create a new user invalid
-POST http://localhost:3000/auth/signup
-content-type: application/json
+### Get the currently signed in user
+GET http://localhost:3000/auth/whoami
 
-{
-  "email": "damar@damar.com"
-}
+### Sign out
+POST http://localhost:3000/auth/signout
 
-### Create a new user invalid extra body whitelist true
-POST http://localhost:3000/auth/signup
-content-type: application/json
+### Find a particular user with a given ID
+GET http://localhost:3000/auth/4
 
-{
-  "email": "damar@damar.com",
-  "password": "asdf1234",
-  "extra": "extra"
-}
+### Find all users with a given email
+GET http://localhost:3000/auth?email=asdf@asdf.com
 
-### Get one user
-GET http://localhost:3000/auth/2
-
-### Get all user with email
-GET http://localhost:3000/auth?email=damar@damar.com
-
-### Delete one user
+### Delete a user given id
 DELETE http://localhost:3000/auth/3
 
-### Delete not found user
-DELETE http://localhost:3000/auth/123123123
-
-### Update a new user invalid extra body whitelist true
-PATCH http://localhost:3000/auth/2
+### Update a user
+PATCH http://localhost:3000/auth/4
 content-type: application/json
 
 {
-  "email": "damar_test@damar.com"
+  "password": "aaaaa"
 }
